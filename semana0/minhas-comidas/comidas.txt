@@ -1,0 +1,10 @@
+1. Pizza
+2. Hambúrguer
+3. Sushi
+4. Yakissoba
+5. Feijão Tropeiro
+6. Churrasco
+7. Lasanha
+8. Galinhada
+9. Mac'n'Cheese
+10. Macarronada
