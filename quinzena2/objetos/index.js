@@ -129,6 +129,6 @@ imprimirObjeto = () => {
         profissao: prompt("Digite sua profissão"),
         idade: prompt("Digite a sua idade"),
     }
-    console.log(typeof(pessoa));
+    console.log(pessoa, typeof(pessoa));
 }
 imprimirObjeto();
