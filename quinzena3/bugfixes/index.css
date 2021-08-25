@@ -22,7 +22,7 @@ input {
 }
 
 button:focus {
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 img {
@@ -110,8 +110,12 @@ td button {
     background-color: #fadf63;
     width: 150px;
     height: 30px;
+    border: none;
     border-radius: 5px;
     color: black;
+}
+td button:hover{
+    background-color:#c7b771;
 }
 
 .container-do-search {
