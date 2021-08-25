@@ -34,12 +34,9 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    width: 3vw;
 }
 
-.slogan-n{
-    display:block;
-}
 
 .botao-amarelo {
     background-color: #ffaf43;
@@ -61,7 +58,7 @@ div img {
 }
 
 .icone {
-    height: 15px;
+    height: 10%;
 }
 
 
