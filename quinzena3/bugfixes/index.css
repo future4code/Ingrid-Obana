@@ -37,6 +37,10 @@ div img {
     background: black;
 }
 
+.slogan-n{
+    display:block;
+}
+
 .botao-amarelo {
     background-color: #ffaf43;
     width: 250px;
@@ -72,7 +76,7 @@ div img {
     color: white;
 }
 
-#container-de-descricao>ol {
+#container-de-descricao > ol {
     padding: 15px 0px;
 }
 
