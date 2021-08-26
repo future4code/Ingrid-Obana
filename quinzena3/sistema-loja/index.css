@@ -40,8 +40,6 @@ body{
     font-size:2vw;
 }
 
-
-
 .mid-banner{
     display: block;
     background-color: #c7d59f;
@@ -64,14 +62,12 @@ ul{
     text-shadow: 3px 3px rgb(29, 49, 24); 
 }
 
-
 h2{
     font-family: "Calibri", monospace, sans-serif;
     color: #000000;  
     font-size: 2vw;
     font-weight: 600;
 }
-
 
 footer{
     background-color:#8fb339;
