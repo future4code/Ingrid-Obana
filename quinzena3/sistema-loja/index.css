@@ -1,0 +1,79 @@
+body{
+    font-family: "Calibri", monospace, sans-serif;
+    font-weight: 500;
+    background-color:#faf3dd;
+}
+
+.minha-navbar{
+    padding: 10px 10px;
+    background-color: #4b5842;
+    position:top;
+    display: block;
+    float: left;
+    width:100vw;
+}
+
+.minha-navbar a:active, a:visited, a:link{
+    text-decoration: none; 
+    padding: 8px;
+    color:#ffffff;
+}
+
+.minha-navbar a:hover{
+    text-decoration: none; 
+    padding: 8px;
+    color:#050505;
+    background-color:#ffffff;
+    background-position: bottom;
+    
+}
+
+.a-active{
+    background-color: #1e2505;
+}
+
+.banner{
+    font-family: "Gabriola", serif, sans-serif;
+    padding: 20px; 
+    text-align: center;
+    color: #4a7c59;
+    font-size:2vw;
+}
+
+
+
+.mid-banner{
+    display: block;
+    background-color: #c7d59f;
+    padding: 8vh; 
+    margin-top: 7px; 
+    color: #ffffff;
+    background-image: url("/assets/oficina-home.png");
+    background-repeat: no-repeat;
+    background-position:right;
+}
+
+ul{
+    list-style-type: none;
+    text-align:left;
+    font-size:1vw;
+}
+
+.lembrancinha{
+    color: #ffffff;
+    text-shadow: 3px 3px rgb(29, 49, 24); 
+}
+
+
+h2{
+    font-family: "Calibri", monospace, sans-serif;
+    color: #000000;  
+    font-size: 2vw;
+    font-weight: 600;
+}
+
+
+footer{
+    background-color:#8fb339;
+    text-align: center;
+}
