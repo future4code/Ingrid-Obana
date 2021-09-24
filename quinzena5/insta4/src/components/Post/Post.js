@@ -92,11 +92,11 @@ class Post extends React.Component {
 
     return <PostContainer>
       <PostHeader>
-        <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuario}</p>
+        <UserPhoto src={this.props.post.fotoUsuario} alt={'Imagem do usuario'}/>
+        <p>{this.props.post.nomeUsuario}</p>
       </PostHeader>
 
-      <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
+      <PostPhoto src={this.props.post.fotoPost} alt={'Imagem do post'}/>
 
       <PostFooter>
         <IconeComContador
