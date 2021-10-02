@@ -10,10 +10,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <Etapa1 />
-        <Etapa2 />
-        <Etapa3 />
-        <Final />
+        <button>Próxima etapa</button>
       </div>
     );
   }
