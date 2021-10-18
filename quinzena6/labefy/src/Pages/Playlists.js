@@ -20,8 +20,8 @@ class Playlists extends React.Component {
         .get(baseUrl, axiosConfig)
         .then((response) => {
             this.setState({playlists: response.data.result.list})
-        }).catch((error) => {
-            console.log((error.data))
+        }).catch(() => {
+            alert("Ocorreu um erro ao buscar as playlists :(")
         })
     };
 
@@ -29,9 +29,12 @@ class Playlists extends React.Component {
         axios
         .delete(`${baseUrl}/${playlistId}`, axiosConfig)
         .then(() => {
-            this.getAllPlaylists();
-        }).catch((error) => {
-            console.log(error.data)
+            if (window.confirm("Tem certeza que quer deletar essa playlist?")) {
+                alert("Playlist deletada com sucesso!")
+                this.getAllPlaylists();
+            }
+        }).catch(() => {
+            alert("Ocorreu um erro ao deletar a playlist :(")
         });
     };
 

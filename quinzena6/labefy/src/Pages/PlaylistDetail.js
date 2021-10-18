@@ -9,17 +9,67 @@ const PlaylistDetailContainer = styled.div `
     flex-direction: column;
     align-items: center;
 `
+
 const CreateTrack = styled.form `
     display:flex;
     width: 100vw;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 100px;
 
     div{
         display:flex;
         flex-direction: column;
+        padding: 0px 16px;
     }
+`
+const Button = styled.button `
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    border: solid 2px black;
+    outline: 0;
+    padding: 0.4rem 1rem;
+    background-color: #ffffff;
+    color: #fa5d9c;
+    border-radius: 0.35rem;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: pink;
+        z-index: -1;
+        border-radius: 0.35rem;
+        border: solid 2px black;
+        transition: all 0.3s ease-in-out;
+    }
+    &::after {
+        width: 90%;
+        height: 90%;
+    }
+    &:hover::after {
+        width: 100%;
+        height: 100%;
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+`
+
+const Input = styled.input`
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    border: solid 2px black;
+    outline: 0;
+    padding: 0.4rem 1rem;
+    background-color: #ffffff;
+    color: #fa5d9c;
+    border-radius: 0.3rem;
+    position: relative;
 `
 
 class PlaylistDetail extends React.Component {
@@ -40,8 +90,8 @@ class PlaylistDetail extends React.Component {
         .get(`${baseUrl}/${this.props.playlistId}/tracks`, axiosConfig)
         .then((response) => {
             this.setState({tracks: response.data.result.tracks})
-        }).catch((error) => {
-            console.log(error.data)
+        }).catch(() => {
+            alert("Ocorreu um erro ao buscar as músicas :(")
         })
     };
 
@@ -49,9 +99,12 @@ class PlaylistDetail extends React.Component {
         axios
         .delete(`${baseUrl}/${this.props.playlistId}/tracks/${trackId}`, axiosConfig)
         .then(() => {
-            this.getPlaylistTracks();
-        }).catch((error) => {
-            console.log(error.data)
+            if (window.confirm("Tem certeza que quer deletar essa música?")) {
+                alert("Música deletada com sucesso!")
+                this.getPlaylistTracks();
+            } 
+        }).catch(() => {
+            alert("Ocorreu um erro ao deletar a música :(")
         })
     };
 
@@ -69,8 +122,9 @@ class PlaylistDetail extends React.Component {
         .then(() => {
             this.getPlaylistTracks();
             this.setState({trackName: "", artist: "", url: ""})
-        }).catch((error) => {
-            console.log(error.data)
+            alert("Música adicionada com sucesso! ")
+        }).catch(() => {
+            alert("Ocorreu um erro ao adicionar a música :(")
         })
     }
 
@@ -91,10 +145,10 @@ class PlaylistDetail extends React.Component {
         })
         return (
             <PlaylistDetailContainer>
-                <CreateTrack  onSubmit={this.addTrackToPlaylist}>
+                <CreateTrack onSubmit={this.addTrackToPlaylist}>
                 <div>
                     <label>Nome da música:</label>
-                    <input 
+                    <Input 
                     placeholder="Nome da Música"
                     name="trackName"
                     value={this.state.trackName}
@@ -103,7 +157,7 @@ class PlaylistDetail extends React.Component {
                 </div>
                 <div>
                     <label>Artista:</label>
-                    <input 
+                    <Input 
                     placeholder="Artista"
                     name="artist"
                     value={this.state.artist}
@@ -112,17 +166,17 @@ class PlaylistDetail extends React.Component {
                 </div>
                 <div>
                     <label>URL da música:</label>
-                    <input 
+                    <Input 
                         placeholder="Url da Música"
                         name="url"
                         value={this.state.url}
                         onChange={this.changeInputValue}
                     />
                 </div>
-                <button type="submit">Adicionar música</button>
+                <Button type="submit">Adicionar música</Button>
                 </CreateTrack>
                 {renderTracks}
-                <button onClick={()=> {this.props.changePage("playlists", "")}}>Voltar à lista de playlists</button>
+                <Button onClick={()=> {this.props.changePage("playlists", "")}}>Voltar à lista de playlists</Button>
             </PlaylistDetailContainer>
         )        
     }   

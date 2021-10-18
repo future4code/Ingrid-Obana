@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import TrashIcon from './TrashIcon.png';
 
 const TrackCardContainer = styled.div `
     margin: 20px;
@@ -13,6 +14,9 @@ const TrackCardContainer = styled.div `
         align-items: center;
     }
 `
+const Image = styled.img`
+    cursor: pointer;
+`
 
 const TrackContainer = styled.h4 `
     margin: 10px;
@@ -22,16 +26,13 @@ const ArtistContainer = styled.p `
     margin-right: 10px;
 `
 
-const DeleteButton = styled.p `
-    color: red;
-`
 const TrackCard = (props) => {
     return (
     <TrackCardContainer>
         <div>
             <TrackContainer>{props.trackName} - </TrackContainer>
             <ArtistContainer>{props.artist} - </ArtistContainer>
-            <DeleteButton onClick={()=> {props.removeTrackFromPlaylist(props.trackId)}}>X</DeleteButton>
+            <div><Image src={TrashIcon} onClick={()=> {props.removeTrackFromPlaylist(props.trackId)}}/></div>
         </div>
         <audio controls="controls">
             <source src={props.url} type="audio/ogg"/>

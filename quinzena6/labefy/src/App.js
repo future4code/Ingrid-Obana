@@ -3,6 +3,7 @@ import Header from './Components/Header'
 import styled from 'styled-components'
 import AllPlaylists from './Pages/AllPlaylists';
 import CreatePlaylist from './Pages/CreatePlaylist';
+import './App.css';
 
 const AppContainer = styled.div `
   width: 100vw;

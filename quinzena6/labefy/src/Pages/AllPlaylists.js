@@ -4,7 +4,9 @@ import Playlists from './Playlists'
 import PlaylistDetail from './PlaylistDetail'
 
 const AllPlaylistsContainer = styled.div `
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 class AllPlaylists extends React.Component {
@@ -34,6 +36,7 @@ class AllPlaylists extends React.Component {
 
         return (
             <AllPlaylistsContainer>
+                <h2>Todas as Playlists</h2>
                 {renderPage()}
             </AllPlaylistsContainer>
             )        
