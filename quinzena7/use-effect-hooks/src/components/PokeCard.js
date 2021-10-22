@@ -15,8 +15,8 @@ const PokeCard = (props) => {
       .then((res) => {
         setPokemon(res.data);
       })
-      .catch((err) => {
-        console.log(err.res.data);
+      .catch(() => {
+        alert("Algo deu errado :(")
       });
     } 
     getPokemon()

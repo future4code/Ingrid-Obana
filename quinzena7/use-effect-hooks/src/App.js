@@ -17,8 +17,8 @@ const App = () =>{
       .get("https://pokeapi.co/api/v2/pokemon/?limit=151")
       .then((res) => {
         setPokeList(res.data.results)
-      }).catch((err) => {
-        console.log(err.data)
+      }).catch(() => {
+        alert("Algo deu errado :(")
       })
     };
 
