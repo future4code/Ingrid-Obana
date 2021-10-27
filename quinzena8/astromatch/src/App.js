@@ -1,6 +1,5 @@
 
-import { render } from '@testing-library/react';
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import MainPage from './Pages/MainPage';
 import MatchesPage from './Pages/MatchesPage';

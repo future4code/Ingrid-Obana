@@ -10,8 +10,8 @@ const MainPage = (props) => {
         axios
         .get(`${BASE_URL}/person`)
         .then((res) => {
-            setProfile(res.data)
-            console.log(res.data)
+            setProfile(res.data.profile)
+            console.log(res.data.profile)
         })
         .catch((err) => {
             console.log(err)
@@ -21,14 +21,19 @@ const MainPage = (props) => {
         getProfile()
     }, [])
 
+
     return(
         <div>
             <button onClick={ ()=> {props.changePage('matchesPage')}}>MatchesPage</button>
-            <h1>AstroMatch</h1>
-            <Profile />
+            <Profile
+            key={profile.id}
+            name={profile.name}
+            age={profile.age}
+            photo={profile.photo}
+            bio={profile.bio}
+            />
         </div>
     )
-    
 }
 
 export default MainPage;
