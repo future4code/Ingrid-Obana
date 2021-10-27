@@ -24,6 +24,7 @@ const App = () => {
     <div className="App">
       <h1>AstroMatch</h1>
       {renderPage()}
+      
     </div>
   );
 }

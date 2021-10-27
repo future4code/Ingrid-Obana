@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import axios from "axios";
-import { BASE_URL } from "../Constants/Url";
+import { axiosConfig, BASE_URL } from "../Constants/Url";
 import Profile from '../Components/Profile'
+import ChooseBar from '../Components/ChooseBar';
 
 const MainPage = (props) => {
     const [profile, setProfile] = useState([]) 
 
-    const getProfile = () => {
+    const getProfileToChoose = () => {
         axios
         .get(`${BASE_URL}/person`)
         .then((res) => {
@@ -14,13 +15,23 @@ const MainPage = (props) => {
             console.log(res.data.profile)
         })
         .catch((err) => {
-            console.log(err)
+            console.log(err.res.data)
         })
     }
-    useEffect(()=>{
-        getProfile()
-    }, [])
 
+    const clear = () => {
+        axios
+        .put(`${BASE_URL}/clear`, axiosConfig)
+        .then((res) => {
+            console.log("cleared", res.data)
+        }).catch((err) => {
+            console.log("something was wrong", err.data)
+        })
+    };
+
+    useEffect(()=>{
+        getProfileToChoose()
+    }, [])
 
     return(
         <div>
@@ -32,6 +43,8 @@ const MainPage = (props) => {
             photo={profile.photo}
             bio={profile.bio}
             />
+            <ChooseBar/>
+            <button onClick={() => {clear()}}>Clear all swipes and matches</button>
         </div>
     )
 }
