@@ -1,6 +1,6 @@
 # astroMatch
 
-><s>Me chama de previsão do tempo e diz que tá rolando um clima 🔥</s>
+<s>Me chama de previsão do tempo e diz que tá rolando um clima 🔥</s>
 
 ## o que está funcionando:
 - página principal (página de escolhas);
@@ -16,7 +16,7 @@
 - não está responsivo.
 
 ## link surge: 
-(https://astromatch-ingrid-obana.surge.sh/)
+https://astromatch-ingrid-obana.surge.sh/
 
 ## Imagens:
 ![image](https://user-images.githubusercontent.com/60152991/138985461-7aa3e11f-59c1-4efb-a0d7-f998652036bb.png)
