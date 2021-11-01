@@ -4,7 +4,7 @@ import './App.css';
 import MainPage from './Pages/MainPage';
 import MatchesPage from './Pages/MatchesPage';
 
-const App = () => {
+const App = () => { 
   const [currentPage, setCurrentPage] = useState("mainPage")
 
   const renderPage = () => {
@@ -21,10 +21,9 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <h1>AstroMatch</h1>
-      {renderPage()}
-    </div>
+      <div className="App">
+        {renderPage()}
+      </div>
   );
 }
 
