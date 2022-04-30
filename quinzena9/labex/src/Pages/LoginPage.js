@@ -4,13 +4,9 @@ import { BASE_URL } from "../url/BASE_URL";
 
 const LoginPage = () => {
   const [form, setForm] = useState({email:"", password:""})
-
-  const onChangeEmail = (e) => {
-    setForm({...form, email: e.target.value})
-  }
-
-  const onChangePassword = (e) => {
-    setForm({...form, password: e.target.value})
+  
+  const onChange = (e) => {
+    setForm({...form, [e.target.name]: e.target.value});
   }
 
   const Login = (e) => {
@@ -29,17 +25,23 @@ const LoginPage = () => {
       <div>
           <h3>Sign in</h3>
           <form onSubmit={Login}>
-          <input type={"email"}
+          <input 
+            type="email"
+            name="email"
             value={form.email} 
             placeholder={"email"}
-            onChange={onChangeEmail}
+            onChange={onChange}
             required
+            pattern={"^.{6,}"}
+            title={"Sua senha deve ter no mínimo 6 caracteres"}
           />
           <br/>
-          <input type={"password"}
+          <input 
+            type="password"
+            name="password"
             value={form.password}
             placeholder={"password"}
-            onChange={onChangePassword}
+            onChange={onChange}
             required
           />
           <button>Login</button>
